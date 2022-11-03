@@ -24,9 +24,29 @@ const Field = () => {
     });
   }, [sdk.field, sdk.window]);
 
+  const openDialog = () => {
+    sdk.dialogs
+      .openCurrent({
+        title: "Edit me or something",
+        width: 1200,
+        minHeight: 800,
+        shouldCloseOnOverlayClick: true,
+        shouldCloseOnEscapePress: true,
+      })
+      .then((data) => {
+        //setValue(data);
+      });
+  };
+
   return (
     <>
+<<<<<<< Updated upstream
       <Button variant="primary">Edit Lottie</Button>
+=======
+      <Button variant="primary" onclick={openDialog}>
+        Edit Lottie
+      </Button>
+>>>>>>> Stashed changes
       <Lottie
         loop
         animationData={lottieJson}
