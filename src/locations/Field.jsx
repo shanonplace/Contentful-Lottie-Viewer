@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Paragraph } from "@contentful/f36-components";
 import {
   /* useCMA, */ SDKContext,
@@ -6,16 +6,29 @@ import {
 } from "@contentful/react-apps-toolkit";
 import { JsonEditor } from "@contentful/field-editor-json";
 import Lottie from "react-lottie-player";
-import { Flex } from '@contentful/f36-components';
-
+import { Flex } from "@contentful/f36-components";
 
 const Field = () => {
+  const [lottieJson, setLottieJson] = useState("");
   const sdk = useSDK();
-  sdk.window.startAutoResizer();
 
-  console.log(sdk.field.getValue());
-  console.log(sdk)
-  const lottieJson = sdk.field.getValue();
+  useEffect(() => {
+    // This ensures our app has enough space to render
+    sdk.window.startAutoResizer();
+
+    // Get current value of the field so we can display it
+    setLottieJson(sdk.field.getValue());
+  }, [sdk.field, sdk.window]);
+
+  useEffect(() => {
+    sdk.window.startAutoResizer();
+
+    sdk.entry.fields.animatedImage.onValueChanged((value) => {
+      setLottieJson(value ? value : "");
+    });
+  }, [sdk.entry.fields.animatedImage, sdk.window]);
+
+  //const lottieJson = sdk.field.getValue();
   /*
      To use the cma, inject it as follows.
      If it is not needed, you can remove the next line.
@@ -26,7 +39,6 @@ const Field = () => {
   // -> https://www.contentful.com/developers/docs/extensibility/field-editors/
   return (
     <>
-      <Flex justifyContent="space-around" alignItems="">
       <Lottie
         loop
         animationData={lottieJson}
@@ -34,9 +46,7 @@ const Field = () => {
         style={{ width: 250, height: 250 }}
       />
       <JsonEditor field={sdk.field}></JsonEditor>
-      </Flex>
     </>
-    
   );
 };
 
