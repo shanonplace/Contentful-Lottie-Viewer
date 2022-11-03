@@ -25,14 +25,14 @@ const Field = () => {
   }, [sdk.field, sdk.window]);
 
   const openDialog = () => {
-    console.log("are we even getting here?");
     sdk.dialogs
       .openCurrent({
-        title: "Edit me or something",
+        title: "Edit Lottie JSON",
         width: 1200,
         minHeight: 800,
         shouldCloseOnOverlayClick: true,
         shouldCloseOnEscapePress: true,
+        parameters: { data: lottieJson },
       })
       .then((data) => {
         //setValue(data);
