@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useSDK } from "@contentful/react-apps-toolkit";
 import { JsonEditor } from "@contentful/field-editor-json";
 import Lottie from "react-lottie-player";
-import { Flex, Button } from "@contentful/f36-components";
+import { Flex, Button, Collapse } from "@contentful/f36-components";
 
 const Field = () => {
   const [lottieJson, setLottieJson] = useState("");
+  const [isExpanded, setIsExpanded] = React.useState(false);
+
   const sdk = useSDK();
 
   useEffect(() => {
@@ -24,26 +26,11 @@ const Field = () => {
     });
   }, [sdk.field, sdk.window]);
 
-  const openDialog = () => {
-    sdk.dialogs
-      .openCurrent({
-        title: "Edit Lottie JSON",
-        width: 1200,
-        minHeight: 800,
-        shouldCloseOnOverlayClick: true,
-        shouldCloseOnEscapePress: true,
-        parameters: { data: lottieJson },
-      })
-      .then((data) => {
-        //setValue(data);
-      });
-  };
-
   return (
     <>
       <Flex justifyContent="flex-end">
-        <Button variant="primary" onClick={openDialog}>
-          Edit Lottie
+        <Button onClick={() => setIsExpanded(!isExpanded)}>
+          {isExpanded ? "Hide" : "Show"} JSON
         </Button>
       </Flex>
       <Flex flexDirection="row">
@@ -53,7 +40,9 @@ const Field = () => {
           play
           style={{ width: 250, height: 250 }}
         />
-        <JsonEditor field={sdk.field}></JsonEditor>
+        <Collapse isExpanded={isExpanded}>
+          <JsonEditor field={sdk.field}></JsonEditor>
+        </Collapse>
       </Flex>
     </>
   );
