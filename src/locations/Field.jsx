@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSDK } from "@contentful/react-apps-toolkit";
 import { JsonEditor } from "@contentful/field-editor-json";
 import Lottie from "react-lottie-player";
-import { Button } from "@contentful/f36-components";
+import { Flex, Button } from "@contentful/f36-components";
 
 const Field = () => {
   const [lottieJson, setLottieJson] = useState("");
@@ -26,7 +26,14 @@ const Field = () => {
 
   return (
     <>
+    <Flex 
+     justifyContent="flex-end"
+    >
       <Button variant="primary">Edit Lottie</Button>
+      </Flex>
+      <Flex 
+      flexDirection="row"
+    >
       <Lottie
         loop
         animationData={lottieJson}
@@ -34,8 +41,11 @@ const Field = () => {
         style={{ width: 250, height: 250 }}
       />
       <JsonEditor field={sdk.field}></JsonEditor>
+      </Flex>
     </>
   );
 };
 
 export default Field;
+
+
