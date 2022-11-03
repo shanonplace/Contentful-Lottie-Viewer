@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Paragraph } from "@contentful/f36-components";
-import {
-  /* useCMA, */ SDKContext,
-  useSDK,
-} from "@contentful/react-apps-toolkit";
+import { useSDK } from "@contentful/react-apps-toolkit";
 import { JsonEditor } from "@contentful/field-editor-json";
 import Lottie from "react-lottie-player";
 import { Flex } from "@contentful/f36-components";
