@@ -29,7 +29,7 @@ const Field = () => {
   return (
     <>
       <Flex justifyContent="flex-end">
-        <Button onClick={() => setIsExpanded(!isExpanded)}>
+        <Button variant="primary" onClick={() => setIsExpanded(!isExpanded)}>
           {isExpanded ? "Hide" : "Show"} JSON
         </Button>
       </Flex>
