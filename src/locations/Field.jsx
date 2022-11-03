@@ -9,6 +9,8 @@ import Lottie from "react-lottie-player";
 
 const Field = () => {
   const sdk = useSDK();
+  sdk.window.startAutoResizer();
+
   console.log(sdk.field.getValue());
   const lottieJson = sdk.field.getValue();
   /*
@@ -25,7 +27,7 @@ const Field = () => {
         loop
         animationData={lottieJson}
         play
-        style={{ width: 150, height: 150 }}
+        style={{ width: 250, height: 250 }}
       />
       <JsonEditor field={sdk.field}></JsonEditor>
     </>
