@@ -40,13 +40,9 @@ const Field = () => {
 
   return (
     <>
-<<<<<<< Updated upstream
-      <Button variant="primary">Edit Lottie</Button>
-=======
       <Button variant="primary" onclick={openDialog}>
         Edit Lottie
       </Button>
->>>>>>> Stashed changes
       <Lottie
         loop
         animationData={lottieJson}
