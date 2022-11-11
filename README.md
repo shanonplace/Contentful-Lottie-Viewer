@@ -1,4 +1,9 @@
-# Field-Hack-2022-Lottie-Viewer
+# Contentful-Lottie-Viewer
+
+This Contentful App Framework app augments the JSON field editor to also include a Lottie player,
+allowing the user to see the animation in action
+
+## Screen Shots
 
 This project was bootstrapped with [Create Contentful App](https://github.com/contentful/create-contentful-app).
 
