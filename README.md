@@ -5,6 +5,11 @@ allowing the user to see the animation in action
 
 ## Screen Shots
 
+![screenshot-1](https://user-images.githubusercontent.com/1778330/201267034-5980dd7b-3cb4-4b96-be36-8b134a996754.png)
+
+![lottie-viewer-json](https://user-images.githubusercontent.com/1778330/201267901-efcd138a-f40e-4cd9-89b4-7cea4f6e6fa5.png)
+
+
 This project was bootstrapped with [Create Contentful App](https://github.com/contentful/create-contentful-app).
 
 ## Available Scripts
