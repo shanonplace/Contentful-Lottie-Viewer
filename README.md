@@ -3,12 +3,13 @@
 This Contentful App Framework app augments the JSON field editor to also include a Lottie player,
 allowing the user to see the animation in action
 
-## Screen Shots (note: these are animations in Contentful, this is just a static screenshot)
+## Screen Shot
 
-![screenshot-1](https://user-images.githubusercontent.com/1778330/201267034-5980dd7b-3cb4-4b96-be36-8b134a996754.png)
+[404-bot.webm](https://user-images.githubusercontent.com/1778330/201444274-7cc8945a-18b5-4ca2-9e12-11606541015c.webm)
 
-![lottie-viewer-json](https://user-images.githubusercontent.com/1778330/201267901-efcd138a-f40e-4cd9-89b4-7cea4f6e6fa5.png)
 
+---
+## Creation
 
 This project was bootstrapped with [Create Contentful App](https://github.com/contentful/create-contentful-app).
 
