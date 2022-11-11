@@ -3,7 +3,7 @@
 This Contentful App Framework app augments the JSON field editor to also include a Lottie player,
 allowing the user to see the animation in action
 
-## Screen Shots
+## Screen Shots (note: these are animations in Contentful, this is just a static screenshot)
 
 ![screenshot-1](https://user-images.githubusercontent.com/1778330/201267034-5980dd7b-3cb4-4b96-be36-8b134a996754.png)
 
@@ -38,17 +38,6 @@ Uploads the build folder to contentful and creates a bundle that is automaticall
 The command guides you through the deployment process and asks for all required arguments.
 Read [here](https://www.contentful.com/developers/docs/extensibility/app-framework/create-contentful-app/#deploy-with-contentful) for more information about the deployment process.
 
-#### `npm run upload-ci`
-
-Similar to `npm run upload` it will upload your app to contentful and activate it. The only difference is  
-that with this command all required arguments are read from the environment variables, for example when you add
-the upload command to your CI pipeline.
-
-For this command to work, the following environment variables must be set:
-
-- `CONTENTFUL_ORG_ID` - The ID of your organization
-- `CONTENTFUL_APP_DEF_ID` - The ID of the app to which to add the bundle
-- `CONTENTFUL_ACCESS_TOKEN` - A personal [access token](https://www.contentful.com/developers/docs/references/content-management-api/#/reference/personal-access-tokens)
 
 ## Libraries to use
 
@@ -57,19 +46,6 @@ To make your app look and feel like Contentful use the following libraries:
 - [Forma 36](https://f36.contentful.com/) – Contentful's design system
 - [Contentful Field Editors](https://www.contentful.com/developers/docs/extensibility/field-editors/) – Contentful's field editor React components
 
-## Using the `contentful-management` SDK
-
-In the default create contentful app output, a contentful management client is
-passed into each location. This can be used to interact with Contentful's
-management API. For example
-
-```js
-// Use the client
-cma.locale.getMany({}).then((locales) => console.log(locales));
-```
-
-Visit the [`contentful-management` documentation](https://www.contentful.com/developers/docs/extensibility/app-framework/sdk/#using-the-contentful-management-library)
-to find out more.
 
 ## Learn More
 
