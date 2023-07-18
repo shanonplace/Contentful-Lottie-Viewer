@@ -47,6 +47,9 @@ To make your app look and feel like Contentful use the following libraries:
 - [Forma 36](https://f36.contentful.com/) – Contentful's design system
 - [Contentful Field Editors](https://www.contentful.com/developers/docs/extensibility/field-editors/) – Contentful's field editor React components
 
+For Lottie
+- [React Lottie Player](https://www.npmjs.com/package/react-lottie-player) - Lottie Player in React
+
 
 ## Learn More
 
