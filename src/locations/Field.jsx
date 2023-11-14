@@ -6,7 +6,7 @@ import { Flex, Button, Collapse } from "@contentful/f36-components";
 
 const Field = () => {
   const [lottieJson, setLottieJson] = useState("");
-  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const sdk = useSDK();
 
